@@ -3,6 +3,7 @@
 body {
   font: normal 20px "Avenir", Helvetica, Arial, sans-serif;
   color: #45494d;
+  background: #ffffff;
 }
 
 a {
@@ -56,6 +57,10 @@ nav a.active {
   color: #50c3af;
 }
 
+nav a:hover {
+  color: #f5dc39;
+}
+
 nav li {
   display: inline;
   padding: 0 25px;
@@ -81,6 +86,10 @@ article h2 a {
   color: inherit;
 }
 
+article h2 a:hover {
+  color: #50c3af;
+}
+
 #content {
   float: left;
   width: 65%;
@@ -96,15 +105,19 @@ article h2 a {
 #sidebar ul {
   padding: 0 0 105px 20px;
   font-size: 14px;
-  list-style: url("images/blt_arrow.png");
 }
 
 #sidebar li {
   padding: 0 0 5px 0;
+  list-style: url("images/blt_arrow.png");
 }
 
 #sidebar li a {
   color: #787b80;
+}
+
+#sidebar li a:hover {
+  color: #50c3af;
 }
 
 #sidebar p {
@@ -162,6 +175,23 @@ footer {
 
 .comments article {
   padding: 0 0 30px 0;
+}
+
+input[type="checkbox"] {display: none;}
+
+#toggle_form { display: none; }
+
+#toggle_form:checked + form {
+  left: 0;
+  height: auto;
+}
+
+form {
+  position: relative;
+  left: -100%;
+  height: 0;
+  padding: 25px 0 0 0;
+  transition: left 200ms linear;
 }
 
 form dt {
