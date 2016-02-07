@@ -1,0 +1,161 @@
+@import url("whitespace-reset.css");
+
+h1 {
+  margin: 0 0 25px 0;
+  font-size: 2.6em; /* base font size */
+}
+
+h2 {
+  margin: 0 0 25px 0;
+  font-size: 2.2em;
+}
+
+h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.8em;
+}
+
+h4 {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+}
+
+.copy p {
+  margin: 0 0 20px 0;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+.copy ul {
+  padding: 0 0 20px 25px;
+  list-style: disc;
+}
+
+.copy ul ul {
+  padding: 20px 0 20px 18px;
+  list-style: circle;
+}
+
+.copy ol {
+  padding: 0 0 20px 25px;
+  list-style: decimal;
+}
+
+.copy ol ol {
+  padding: 20px 0 20px 18px;
+  list-style: lower-latin;
+}
+
+.copy ol.roman {
+  list-style: upper-roman;
+}
+
+.copy ol.roman ol {
+  list-style: lower-roman;
+}
+
+.row {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  box-sizing: border-box; /* take care of padding */
+}
+
+.row:after { /* clear floats */
+  display: block;
+  clear: both;
+  /* make sure any whitespace doesn't show up
+  as extra height with the clearing element*/
+  line-height: 0;
+  content: "";
+}
+
+.half, .third, .fourth, .sixth, .two_third, .five_sixth {
+  float: left;
+  box-sizing: border-box; /* take care of padding */
+}
+
+.half { width: 50% }
+.third { width: 33.3% }
+.fourth { width: 25% }
+.sixth { width: 16.66% }
+.two_third { width: 66.6% }
+.five_sixth { width: 83.3% }
+
+
+
+/* HANDLE MARGIN AFTER FIRST ELEMENT
+
+  note that instead of this huge block
+  you could have added classes to all of the
+  elements that will have margin in our html.
+
+  This approach would make overriding these
+  margins easier because you just override the
+  .margin class and the fraction classes like
+  this:
+
+    <li class="half margin">1/2</li>
+
+    .margin {margin-left: 2%;}
+    .margin.half {width: 49%;} 
+    ...
+    .margin.five_sixth {width: 82.96%;}
+
+  The below approach is better in this case,
+  because we don't know how many elements we
+  will have in are html.
+
+  The downside is that
+  to override these margins, you would have
+  to duplicate this block and the css after it
+  in your project style css file and override
+  it there.
+
+*/
+
+.margin_row .half + .half,
+.margin_row .half + .third,
+.margin_row .half + .fourth,
+.margin_row .half + .sixth,
+.margin_row .half + .two_third,
+.margin_row .half + .five_sixth,
+.margin_row .third + .half,
+.margin_row .third + .third,
+.margin_row .third + .fourth,
+.margin_row .third + .sixth,
+.margin_row .third + .two_third,
+.margin_row .third + .five_sixth,
+.margin_row .fourth + .half,
+.margin_row .fourth + .third,
+.margin_row .fourth + .fourth,
+.margin_row .fourth + .sixth,
+.margin_row .fourth + .two_third,
+.margin_row .fourth + .five_sixth,
+.margin_row .sixth + .half,
+.margin_row .sixth + .third,
+.margin_row .sixth + .fourth,
+.margin_row .sixth + .sixth,
+.margin_row .sixth + .two_third,
+.margin_row .sixth + .five_sixth,
+.margin_row .two_third + .half,
+.margin_row .two_third + .third,
+.margin_row .two_third + .fourth,
+.margin_row .two_third + .sixth,
+.margin_row .two_third + .two_third,
+.margin_row .two_third + .five_sixth,
+.margin_row .five_sixth + .half,
+.margin_row .five_sixth + .third,
+.margin_row .five_sixth + .fourth,
+.margin_row .five_sixth + .sixth,
+.margin_row .five_sixth + .two_third,
+.margin_row .five_sixth + .five_sixth {
+  margin-left: 2%;
+}
+
+/* reduce width to account for extra 2% margin */
+.margin_row .half { width: 49% }
+.margin_row .third { width: 32% }
+.margin_row .fourth { width: 23.5% }
+.margin_row .sixth { width: 15% }
+.margin_row .two_third { width: 66% }
+.margin_row .five_sixth { width: 82.96% }
